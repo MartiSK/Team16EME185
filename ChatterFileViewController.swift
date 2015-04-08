@@ -8,13 +8,15 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class ChatterFileViewController : UIViewController {
 
     required init(coder aDecoder: NSCoder) {
         var baseString : String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as String
-        var pathComponents = [baseString, "MyAudio.m4a"]
-        self.audioURL = NSURL.fileURLWithPathComponents(pathComponents)!
+        self.audioURL = NSUUID().UUIDString + ".m4a"
+        var pathComponents = [baseString, self.audioURL]
+        var audioNSURL = NSURL.fileURLWithPathComponents(pathComponents)
         
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
@@ -24,7 +26,7 @@ class ChatterFileViewController : UIViewController {
         recordSettings[AVSampleRateKey] = 44100.0
         recordSettings[AVNumberOfChannelsKey] = 2
         
-        self.audioRecorder = AVAudioRecorder(URL: self.audioURL, settings: recordSettings, error: nil)
+        self.audioRecorder = AVAudioRecorder(URL: audioNSURL, settings: recordSettings, error: nil)
         self.audioRecorder.meteringEnabled = true
         self.audioRecorder.prepareToRecord()
         
@@ -37,13 +39,29 @@ class ChatterFileViewController : UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     
     var audioRecorder : AVAudioRecorder
-    var audioURL: NSURL
+    var audioURL: String
     var previousViewController = MainTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // LGI
     }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    /* func keyboardWasShown(notification: NSNotifcation) {
+        var info = notication.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeboardFrameEndUserInfoKey] as NSValue).CGRectValue
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomContraint.constant = keboardFrame.size.height; +20
+        })
+    }
+    */
+    
     // cancel button
     @IBAction func cancelTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -51,13 +69,15 @@ class ChatterFileViewController : UIViewController {
     
     // save button 
     @IBAction func saveTapped(sender: AnyObject) {
-        // create a sound object
-        var chatterfile = ChatterFile()
-        chatterfile.name = chatterTextField.text
-        //chatterfile.URL = self.audioURL
+        var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         
-        // add sound into chatterFiles array
-        self.previousViewController.chatterFiles.append(chatterfile)
+        // create a chatterfile object
+        var chatterfile = NSEntityDescription.insertNewObjectForEntityForName("ChatterFile", inManagedObjectContext: context) as ChatterFile
+        chatterfile.name = chatterTextField.text
+        chatterfile.url = self.audioURL
+        
+        // save sound to core data
+        context.save(nil)
         
         // dismiss this view controller
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -74,7 +94,6 @@ class ChatterFileViewController : UIViewController {
             self.audioRecorder.record()
             self.recordButton.setTitle("Stop Recording", forState: UIControlState.Normal)
         }
-        
         
     }
     
