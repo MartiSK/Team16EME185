@@ -1,18 +1,18 @@
 //
-//  keyboard.m
+//  MyViewController.m
 //  ChatterAppX
 //
-//  Created by Marti Sarigul-Klijn on 4/8/15.
+//  Created by Marti Sarigul-Klijn on 4/10/15.
 //  Copyright (c) 2015 Team16. All rights reserved.
 //
 
-#import "keyboard.h"
+#import "MyViewController.h"
 
-@interface keyboard ()
+@interface MyViewController ()
 
 @end
 
-@implementation keyboard
+@implementation MyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

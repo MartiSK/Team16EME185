@@ -11,6 +11,8 @@ import AVFoundation
 import CoreData
 
 class ChatterFileViewController : UIViewController {
+    
+    
 
     required init(coder aDecoder: NSCoder) {
         var baseString : String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as String
@@ -45,12 +47,30 @@ class ChatterFileViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // LGI
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+
     }
     
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 200
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 200
+    }
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
+    
+    
+    // var instanceOfKeyboard: keyboard = keyboard()
+    
+    
+    
+    
     
     /* func keyboardWasShown(notification: NSNotifcation) {
         var info = notication.userInfo!

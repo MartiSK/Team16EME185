@@ -1,5 +1,5 @@
 //
-//  keyboard.h
+//  keyboad.h
 //  ChatterAppX
 //
 //  Created by Marti Sarigul-Klijn on 4/8/15.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface keyboard : NSViewController
+@interface keyboad : NSViewController
 
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BB590F31AD5BBA600B5A508 /* keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB590F21AD5BBA600B5A508 /* keyboard.m */; };
 		1BB590F61AD5C2AC00B5A508 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1BB590F51AD5C2AC00B5A508 /* README.md */; };
 		69D735651AC4A55000E0DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D735641AC4A55000E0DA1F /* AppDelegate.swift */; };
 		69D735681AC4A55000E0DA1F /* ChatterAppX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69D735661AC4A55000E0DA1F /* ChatterAppX.xcdatamodeld */; };
@@ -32,8 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BB590F11AD5BB6F00B5A508 /* keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyboard.h; sourceTree = "<group>"; };
-		1BB590F21AD5BBA600B5A508 /* keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyboard.m; sourceTree = "<group>"; };
 		1BB590F51AD5C2AC00B5A508 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		69D7355F1AC4A55000E0DA1F /* ChatterAppX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterAppX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D735631AC4A55000E0DA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,9 +105,7 @@
 				69D735701AC4A55000E0DA1F /* LaunchScreen.xib */,
 				69D735661AC4A55000E0DA1F /* ChatterAppX.xcdatamodeld */,
 				69D735621AC4A55000E0DA1F /* Supporting Files */,
-				1BB590F11AD5BB6F00B5A508 /* keyboard.h */,
 				1BB590F41AD5C2AC00B5A508 /* Team16EME185 */,
-				1BB590F21AD5BBA600B5A508 /* keyboard.m */,
 			);
 			path = ChatterAppX;
 			sourceTree = "<group>";
@@ -246,7 +241,6 @@
 				69D7358B1AC4A5D300E0DA1F /* MainTableViewController.swift in Sources */,
 				1BB590F61AD5C2AC00B5A508 /* README.md in Sources */,
 				69D735651AC4A55000E0DA1F /* AppDelegate.swift in Sources */,
-				1BB590F31AD5BBA600B5A508 /* keyboard.m in Sources */,
 				69D735981AC4AB6C00E0DA1F /* ChatterFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
