@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ED3D948A-9C2C-45E1-BCD2-3592397E8DD4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ChatterAppX</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>44A677B187123138E8D8726F2300EDCAD8F9758D</key>
+		<string>https://github.com/MartiSK/Team16EME185.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ChatterAppX.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>44A677B187123138E8D8726F2300EDCAD8F9758D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MartiSK/Team16EME185.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>44A677B187123138E8D8726F2300EDCAD8F9758D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>44A677B187123138E8D8726F2300EDCAD8F9758D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ChatterAppX-3</string>
+		</dict>
+	</array>
+</dict>
+</plist>
