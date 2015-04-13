@@ -18,6 +18,7 @@
 		69D7358C1AC4A5D300E0DA1F /* whistle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 69D735891AC4A5D300E0DA1F /* whistle.m4a */; };
 		69D7358E1AC4A63700E0DA1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D7358D1AC4A63700E0DA1F /* Main.storyboard */; };
 		69D735981AC4AB6C00E0DA1F /* ChatterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D735971AC4AB6C00E0DA1F /* ChatterFile.swift */; };
+		90160F781ADB40A5007CEF79 /* ConvertAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90160F771ADB40A5007CEF79 /* ConvertAudio.swift */; };
 		90E67F191AD9273B00BC5EEC /* AKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E67D701AD9273B00BC5EEC /* AKManager.m */; };
 		90E67F1A1AD9273B00BC5EEC /* AKOrchestra.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E67D721AD9273B00BC5EEC /* AKOrchestra.m */; };
 		90E67F1B1AD9273B00BC5EEC /* AudioKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E67D731AD9273B00BC5EEC /* AudioKit.plist */; };
@@ -225,6 +226,7 @@
 		69D735891AC4A5D300E0DA1F /* whistle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = whistle.m4a; path = ../whistle.m4a; sourceTree = "<group>"; };
 		69D7358D1AC4A63700E0DA1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		69D735971AC4AB6C00E0DA1F /* ChatterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatterFile.swift; sourceTree = "<group>"; };
+		90160F771ADB40A5007CEF79 /* ConvertAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertAudio.swift; sourceTree = "<group>"; };
 		90E67D6E1AD9273B00BC5EEC /* AKFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKFoundation.h; sourceTree = "<group>"; };
 		90E67D6F1AD9273B00BC5EEC /* AKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKManager.h; sourceTree = "<group>"; };
 		90E67D701AD9273B00BC5EEC /* AKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKManager.m; sourceTree = "<group>"; };
@@ -653,7 +655,6 @@
 			children = (
 				69D735971AC4AB6C00E0DA1F /* ChatterFile.swift */,
 				69D7358D1AC4A63700E0DA1F /* Main.storyboard */,
-				69D735891AC4A5D300E0DA1F /* whistle.m4a */,
 				69D735641AC4A55000E0DA1F /* AppDelegate.swift */,
 				69D735881AC4A5D300E0DA1F /* MainTableViewController.swift */,
 				69D735871AC4A5D300E0DA1F /* ChatterFileViewController.swift */,
@@ -669,7 +670,9 @@
 		69D735621AC4A55000E0DA1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90160F771ADB40A5007CEF79 /* ConvertAudio.swift */,
 				90E67FCE1AD9277D00BC5EEC /* Chatter-Bridging-Header.h */,
+				69D735891AC4A5D300E0DA1F /* whistle.m4a */,
 				90E67D6C1AD9273B00BC5EEC /* AudioKit2 */,
 				69D735631AC4A55000E0DA1F /* Info.plist */,
 			);
@@ -1679,6 +1682,7 @@
 				90E67F191AD9273B00BC5EEC /* AKManager.m in Sources */,
 				90E67F251AD9273B00BC5EEC /* AKTrackedFrequencyFromFSignal.m in Sources */,
 				90E67F7C1AD9273B00BC5EEC /* AKMoogVCF.m in Sources */,
+				90160F781ADB40A5007CEF79 /* ConvertAudio.swift in Sources */,
 				90E67FBC1AD9273C00BC5EEC /* AKFloatPlot.m in Sources */,
 				90E67F391AD9273B00BC5EEC /* AKADSREnvelope.m in Sources */,
 				90E67FB71AD9273C00BC5EEC /* AKAudioInputPlot.m in Sources */,

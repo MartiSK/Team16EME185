@@ -8,5 +8,10 @@
 
 #import "AKFoundation.h"
 #import "AKTools.h"
+
+#pragma mark - Platforms
+#import "CsoundObj.h"
+
 #pragma mark - Utilities
 #import "AKAudioInputFFTPlot.h"
+#import "CsoundObj.h"

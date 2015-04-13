@@ -32,6 +32,12 @@ class ChatterFileViewController : UIViewController {
         self.audioRecorder.meteringEnabled = true
         self.audioRecorder.prepareToRecord()
         
+        
+        
+        
+        
+        
+        
         // super init below
         super.init(coder: aDecoder)
     }
@@ -43,6 +49,10 @@ class ChatterFileViewController : UIViewController {
     var audioRecorder : AVAudioRecorder
     var audioURL: String
     var previousViewController = MainTableViewController()
+    
+    
+    var csound = convertAudio (audioNSURL) // send audioNSURL to convertAudio and assign the returning CsoundObj to csound
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +124,14 @@ class ChatterFileViewController : UIViewController {
             self.audioRecorder.record()
             self.recordButton.setTitle("Stop Recording", forState: UIControlState.Normal)
         }
+        
+    }
+    
+    @IBOutlet var fftPlot: AKAudioInputFFTPlot!
+    
+    func setupFFT (csound: CsoundObj){
+        
+        fftPlot.setup(csound)
         
     }
     
