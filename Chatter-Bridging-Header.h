@@ -10,3 +10,9 @@
 #import "AKTools.h"
 #pragma mark - Utilities
 #import "AKAudioInputFFTPlot.h"
+#import "FFT.h"
+#import "EZAudioPlot.h"
+#import "EZPlot.h"
+//#import "EZAudioPlotGL.h"
+#import "EZMicrophone.h"
+//#import "EZRecorder.h"
