@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1BB590F61AD5C2AC00B5A508 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1BB590F51AD5C2AC00B5A508 /* README.md */; };
+		695656171AE3850100FF567D /* FFTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 695656161AE3850100FF567D /* FFTViewController.m */; };
+		695656201AE3897E00FF567D /* Microphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6956561F1AE3897E00FF567D /* Microphone.m */; };
 		69D735651AC4A55000E0DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D735641AC4A55000E0DA1F /* AppDelegate.swift */; };
 		69D735681AC4A55000E0DA1F /* ChatterAppX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69D735661AC4A55000E0DA1F /* ChatterAppX.xcdatamodeld */; };
 		69D7356F1AC4A55000E0DA1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D7356E1AC4A55000E0DA1F /* Images.xcassets */; };
@@ -211,6 +213,10 @@
 
 /* Begin PBXFileReference section */
 		1BB590F51AD5C2AC00B5A508 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		695656151AE3850100FF567D /* FFTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTViewController.h; sourceTree = "<group>"; };
+		695656161AE3850100FF567D /* FFTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTViewController.m; sourceTree = "<group>"; };
+		6956561E1AE3897E00FF567D /* Microphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microphone.h; sourceTree = "<group>"; };
+		6956561F1AE3897E00FF567D /* Microphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Microphone.m; sourceTree = "<group>"; };
 		69D7355F1AC4A55000E0DA1F /* ChatterAppX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterAppX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D735631AC4A55000E0DA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69D735641AC4A55000E0DA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -633,6 +639,10 @@
 		69D735561AC4A55000E0DA1F = {
 			isa = PBXGroup;
 			children = (
+				6956561E1AE3897E00FF567D /* Microphone.h */,
+				6956561F1AE3897E00FF567D /* Microphone.m */,
+				695656151AE3850100FF567D /* FFTViewController.h */,
+				695656161AE3850100FF567D /* FFTViewController.m */,
 				69D735611AC4A55000E0DA1F /* ChatterAppX */,
 				69D7357A1AC4A55100E0DA1F /* ChatterAppXTests */,
 				69D735601AC4A55000E0DA1F /* Products */,
@@ -1692,6 +1702,7 @@
 				90E67F2A1AD9273B00BC5EEC /* AKPhaseLockedVocoder.m in Sources */,
 				90E67F911AD9273B00BC5EEC /* AKStereoAudio.m in Sources */,
 				90E67F6B1AD9273B00BC5EEC /* AKConvolution.m in Sources */,
+				695656171AE3850100FF567D /* FFTViewController.m in Sources */,
 				90E67F7D1AD9273B00BC5EEC /* AKResonantFilter.m in Sources */,
 				90E67F701AD9273B00BC5EEC /* AKCompressor.m in Sources */,
 				90E67F791AD9273B00BC5EEC /* AKHilbertTransformer.m in Sources */,
@@ -1706,6 +1717,7 @@
 				90E67FAE1AD9273C00BC5EEC /* Sleighbells.m in Sources */,
 				90E67F661AD9273B00BC5EEC /* AKAudioOutput.m in Sources */,
 				90E67F2E1AD9273B00BC5EEC /* AKWarpedFFT.m in Sources */,
+				695656201AE3897E00FF567D /* Microphone.m in Sources */,
 				90E67F991AD9273C00BC5EEC /* AKEvent.m in Sources */,
 				90E67F841AD9273B00BC5EEC /* AKLowPassButterworthFilter.m in Sources */,
 				90E67F361AD9273B00BC5EEC /* AKSingleInputMathOperation.m in Sources */,

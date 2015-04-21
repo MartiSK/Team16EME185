@@ -7,6 +7,9 @@
 //
 
 #import "AKFoundation.h"
+//#import "AnalysisViewController.h"
+#import "Microphone.h"
 #import "AKTools.h"
 #pragma mark - Utilities
 #import "AKAudioInputFFTPlot.h"
+#import "FFTViewController.h"
