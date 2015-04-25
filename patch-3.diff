@@ -1,0 +1,139 @@
+From b62c7a79312c88570beca72e5db0c939eee10fb5 Mon Sep 17 00:00:00 2001
+From: Aurelius Prochazka <aure@aure.com>
+Date: Tue, 21 Apr 2015 09:53:28 -0700
+Subject: [PATCH] Making things work
+
+---
+ .../Volume and Spatialization/AKMix.m              |  4 --
+ ChatterAppX/Main.storyboard                        |  7 +--
+ ChatterFileViewController.swift                    | 52 +++++++++-------------
+ 3 files changed, 25 insertions(+), 38 deletions(-)
+
+diff --git a/ChatterAppX/AudioKit2/Operations/Signal Modifiers/Volume and Spatialization/AKMix.m b/ChatterAppX/AudioKit2/Operations/Signal Modifiers/Volume and Spatialization/AKMix.m
+index e46087a..c29b6d8 100755
+--- a/ChatterAppX/AudioKit2/Operations/Signal Modifiers/Volume and Spatialization/AKMix.m	
++++ b/ChatterAppX/AudioKit2/Operations/Signal Modifiers/Volume and Spatialization/AKMix.m	
+@@ -11,10 +11,6 @@
+ 
+ #import "AKMix.h"
+ 
+-@interface AKMix ()
+-@property NSString *state;
+-@end
+-
+ @implementation AKMix
+ {
+     AKParameter *in1;
+diff --git a/ChatterAppX/Main.storyboard b/ChatterAppX/Main.storyboard
+index 5d57155..c33b12e 100755
+--- a/ChatterAppX/Main.storyboard
++++ b/ChatterAppX/Main.storyboard
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dtg-oY-4ho">
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dtg-oY-4ho">
+     <dependencies>
+         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+@@ -161,8 +161,8 @@
+                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                 <nil key="highlightedColor"/>
+                             </label>
+-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTV-IC-5P1" customClass="AKAudioInputFFTPlot">
+-                                <rect key="frame" x="36" y="153" width="528" height="140"/>
++                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTV-IC-5P1" customClass="AKAudioInputFFTPlot">
++                                <rect key="frame" x="36" y="168" width="528" height="140"/>
+                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                 <constraints>
+                                     <constraint firstAttribute="height" constant="140" id="0a2-PB-8z1"/>
+@@ -228,6 +228,7 @@
+                     </view>
+                     <connections>
+                         <outlet property="chatterTextField" destination="kAC-cZ-bQT" id="COT-xI-VmO"/>
++                        <outlet property="fftPlot" destination="JTV-IC-5P1" id="fcw-u0-WLa"/>
+                         <outlet property="recordButton" destination="l3s-L9-qmF" id="aIC-qB-WaV"/>
+                     </connections>
+                 </viewController>
+diff --git a/ChatterFileViewController.swift b/ChatterFileViewController.swift
+index d39f886..1424740 100755
+--- a/ChatterFileViewController.swift
++++ b/ChatterFileViewController.swift
+@@ -12,54 +12,44 @@ import CoreData
+ 
+ class ChatterFileViewController : UIViewController {
+     
+-    let microphone: Microphone
++
++    @IBOutlet var fftPlot: AKAudioInputFFTPlot!
++    let microphone = Microphone()
+     
+-     init(){
+-        microphone = Microphone()
+-        super.init()
+-    }
++    @IBOutlet weak var chatterTextField: UITextField! // chatter file name text field
++    @IBOutlet weak var recordButton: UIButton!
++    
++//    var audioRecorder : AVAudioRecorder
++//    var audioURL: String
++    var previousViewController = MainTableViewController()
+     
+-    required init(coder aDecoder: NSCoder) {
++    
++    override func viewDidLoad() {
++        super.viewDidLoad()
++        AKManager.sharedManager().isLogging = true
++        AKOrchestra.addInstrument(microphone)
++        // LGI
++        microphone.play()
++        AKManager.addBinding(fftPlot)
++
+ //        var baseString : String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
+ //        self.audioURL = NSUUID().UUIDString + ".m4a"
+ //        var pathComponents = [baseString, self.audioURL]
+ //        var audioNSURL = NSURL.fileURLWithPathComponents(pathComponents)
+-//        
++//
+ //        var session = AVAudioSession.sharedInstance()
+ //        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+-//        
++//
+ //        var recordSettings: [NSObject : AnyObject] = Dictionary()
+ //        recordSettings[AVFormatIDKey] = kAudioFormatMPEG4AAC
+ //        recordSettings[AVSampleRateKey] = 44100.0
+ //        recordSettings[AVNumberOfChannelsKey] = 2
+-//        
++//
+ //        self.audioRecorder = AVAudioRecorder(URL: audioNSURL, settings: recordSettings, error: nil)
+ //        self.audioRecorder.meteringEnabled = true
+ //        self.audioRecorder.prepareToRecord()
+-        
+-        microphone = Microphone()
+-        
+-        // super init below
+-        super.init(coder: aDecoder)
+     }
+     
+-    
+-    @IBOutlet weak var chatterTextField: UITextField! // chatter file name text field
+-    @IBOutlet weak var recordButton: UIButton!
+-    
+-  
+-    
+-//    var audioRecorder : AVAudioRecorder
+-//    var audioURL: String
+-    var previousViewController = MainTableViewController()
+-    
+-    
+-    
+-    override func viewDidLoad() {
+-        super.viewDidLoad()
+-        // LGI
+-        microphone.play()
+-    }
+     // cancel button
+     @IBAction func cancelTapped(sender: AnyObject) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+-- 
+2.2.1
+
